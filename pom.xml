@@ -2,39 +2,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>9</version>
-    </parent>
-
-    <groupId>net.md-5</groupId>
+    <groupId>space.arim.netpaper</groupId>
     <artifactId>specialsource-maven-plugin</artifactId>
     <version>1.3-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>SpecialSourceMP</name>
 
-    <scm>
-        <connection>scm:git:git@github.com:agaricusb/SpecialSourceMP.git</connection>
-        <developerConnection>scm:git:git@github.com:agaricusb/SpecialSourceMP.git</developerConnection>
-        <url>git@github.com:agaricusb/SpecialSourceMP.git</url>
-    </scm>
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/agaricusb/SpecialSourceMP/issues</url>
-    </issueManagement>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mavenPluginVersion>3.5</mavenPluginVersion>
-        <mavenVersion>3.0</mavenVersion>
+        <mavenPluginVersion>3.6.0</mavenPluginVersion>
+        <mavenVersion>3.6.3</mavenVersion>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
+    <distributionManagement>
+		<repository>
+			<id>arim-repo</id>
+			<url>https://maven.cloudsmith.io/anand-beh/arim-repo/</url>
+		</repository>
+		<snapshotRepository>
+			<id>arim-repo</id>
+			<url>https://maven.cloudsmith.io/anand-beh/arim-repo/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
     <dependencies>
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>SpecialSource</artifactId>
-            <version>1.8.1</version>
+            <version>1.8.6</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
@@ -102,4 +99,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+    	<repository>
+    		<id>sonatype-releases</id>
+    		<url>https://oss.sonatype.org/content/repositories/releases</url>
+    	</repository>
+    </repositories>
 </project>
